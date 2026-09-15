@@ -3,197 +3,167 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#0a0f1e" />
-  <meta name="description" content="OPTjava — Java の最適化を、もっとシンプルに。Java optimization experiments and tooling in one open-source project." />
-  <meta property="og:title" content="OPTjava" />
-  <meta property="og:description" content="Java の最適化を、もっとシンプルに。" />
+  <meta name="theme-color" content="#f6f6f6" />
+  <meta name="description" content="OPTjava — Java performance optimization encyclopedia in Japanese and English. JVM, GC, memory, concurrency, I/O, profiling and benchmarking." />
+  <meta property="og:title" content="OPTjava — Java Performance Encyclopedia" />
+  <meta property="og:description" content="A bilingual encyclopedia for Java optimization and performance engineering." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://summer110622.github.io/OPT-java/" />
-  <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://summer110622.github.io/OPT-java/" />
   <link rel="stylesheet" href="styles.css" />
-  <title>OPTjava — Java optimization, simplified.</title>
+  <title>OPTjava — Java Performance Encyclopedia</title>
 </head>
 <body>
-  <div class="page-grid" aria-hidden="true"></div>
-  <div class="glow glow-a" aria-hidden="true"></div>
-  <div class="glow glow-b" aria-hidden="true"></div>
+  <a class="skip-link" href="#dictionary">Skip to content</a>
 
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="OPTjava home">
-        <span class="brand-mark" aria-hidden="true">O</span>
-        <span>OPT<span class="brand-accent">java</span></span>
+  <div class="wiki-topbar">
+    <span>OPTjava</span> ·
+    <button class="lang-toggle" id="lang-toggle" type="button" aria-label="Switch language"><span id="lang-current">JA</span><span class="lang-divider">/</span><span id="lang-next">EN</span></button>
+    · <a href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">GitHub</a>
+  </div>
+
+  <div class="wiki-layout">
+    <aside class="wiki-sidebar" aria-label="Site navigation">
+      <a class="wiki-logo" href="#top" id="top">
+        <span class="wiki-logo-mark">O</span>
+        <span class="wiki-logo-title">OPTjava</span>
+        <span class="wiki-logo-subtitle">Java Optimization Wiki</span>
       </a>
 
-      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="メニューを開く">
-        <span></span><span></span>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="#about">About</a>
-        <a href="#principles">Principles</a>
-        <a href="#start">Start</a>
-        <a class="nav-github" href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">
-          GitHub
-          <span aria-hidden="true">↗</span>
-        </a>
+      <nav class="portal">
+        <h3>Navigation</h3>
+        <ul>
+          <li><a href="#top">Main page</a></li>
+          <li><a href="#dictionary" data-i18n="navDictionary">百科辞典</a></li>
+          <li><a href="#method" data-i18n="navMethod">方法論</a></li>
+          <li><a href="#principles" data-i18n="navPrinciples">原則</a></li>
+        </ul>
       </nav>
+
+      <nav class="portal">
+        <h3>Categories</h3>
+        <ul>
+          <li><a href="#dictionary">JVM</a></li>
+          <li><a href="#dictionary">Memory</a></li>
+          <li><a href="#dictionary">GC</a></li>
+          <li><a href="#dictionary">CPU</a></li>
+          <li><a href="#dictionary">Concurrency</a></li>
+          <li><a href="#dictionary">I/O</a></li>
+          <li><a href="#dictionary">Collections</a></li>
+          <li><a href="#dictionary">Tooling</a></li>
+        </ul>
+      </nav>
+
+      <nav class="portal">
+        <h3>Project</h3>
+        <ul>
+          <li><a href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">Source code</a></li>
+          <li><a href="https://github.com/Summer110622/OPT-java/issues" target="_blank" rel="noreferrer">Issues</a></li>
+          <li><a href="https://github.com/Summer110622/OPT-java/commits/main" target="_blank" rel="noreferrer">Recent changes</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="wiki-main">
+      <div class="wiki-tabs" aria-label="Page tools">
+        <div class="wiki-tab-group">
+          <a class="wiki-tab active" href="#top">Article</a>
+          <a class="wiki-tab" href="https://github.com/Summer110622/OPT-java/issues" target="_blank" rel="noreferrer">Discussion</a>
+        </div>
+        <form class="wiki-search" action="#dictionary" onsubmit="document.querySelector('#search-input').focus(); return false;">
+          <input type="search" aria-label="Search OPTjava" placeholder="Search OPTjava" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <h1 class="page-title">OPTjava</h1>
+      <p class="page-subtitle">From OPTjava, the Java performance encyclopedia</p>
+      <p class="hatnote">This site documents optimization techniques, measurement methods, trade-offs, and common performance mistakes for Java.</p>
+
+      <aside class="infobox">
+        <div class="infobox-title">OPTjava</div>
+        <table>
+          <tr><th>Type</th><td>Performance encyclopedia</td></tr>
+          <tr><th>Language</th><td>日本語 / English</td></tr>
+          <tr><th>Platform</th><td>GitHub Pages</td></tr>
+          <tr><th>Topics</th><td><span id="entry-count">0</span></td></tr>
+          <tr><th>License</th><td>MIT</td></tr>
+          <tr><th>Source</th><td><a href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">Summer110622/OPT-java</a></td></tr>
+        </table>
+      </aside>
+
+      <div class="lead clearfix">
+        <p><b>OPTjava</b> — <span data-i18n="heroLead">OPTjava は JVM・GC・メモリ・並行処理・I/O・ベンチマークを横断する、Java 最適化・高速化の百科辞典です。</span></p>
+        <p>個々のテクニックを「常に速くなる魔法」として扱うのではなく、<b>Measure → Locate → Change → Verify</b> の順で検証可能な改善として整理します。</p>
+      </div>
+
+      <div class="toc" aria-label="Contents">
+        <div class="toc-title">Contents</div>
+        <ol>
+          <li><a href="#method" data-i18n="navMethod">方法論</a></li>
+          <li><a href="#dictionary" data-i18n="navDictionary">百科辞典</a></li>
+          <li><a href="#principles" data-i18n="navPrinciples">原則</a></li>
+          <li><a href="#contribute">Contributing</a></li>
+        </ol>
+      </div>
+
+      <section id="method">
+        <h2 class="section-title"><a class="edit-link" href="https://github.com/Summer110622/OPT-java/edit/main/index.html" target="_blank" rel="noreferrer">[edit]</a><span data-i18n="methodTitle">最適化は、計測から始める。</span></h2>
+        <p>Java の性能は JIT、GC、OS scheduler、I/O、依存先の状態など多数の要因で変動します。そのため、最適化は再現可能な計測条件を作るところから始めます。</p>
+        <ol class="method-list">
+          <li><strong data-i18n="m1t">Baseline</strong> — <p data-i18n="m1d">再現可能な入力と計測条件を固定する。</p></li>
+          <li><strong data-i18n="m2t">Profile</strong> — <p data-i18n="m2d">CPU・allocation・lock・I/O の支配項を特定する。</p></li>
+          <li><strong data-i18n="m3t">Change one thing</strong> — <p data-i18n="m3d">仮説を一つに絞り、変更の因果を追えるようにする。</p></li>
+          <li><strong data-i18n="m4t">Re-measure</strong> — <p data-i18n="m4d">性能・可読性・運用コストを含めて前後比較する。</p></li>
+        </ol>
+      </section>
+
+      <section id="dictionary">
+        <h2 class="section-title"><a class="edit-link" href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">[source]</a><span data-i18n="dictionaryTitle">Java 最適化百科辞典</span></h2>
+        <p data-i18n="dictionaryLead">症状・技術・計測方法から横断検索できます。</p>
+
+        <div class="dictionary-tools">
+          <label class="search-box" for="search-input">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.2-4.2m2.2-5.3a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
+            <input id="search-input" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="JIT, GC, allocation, JMH..." />
+            <kbd>/</kbd>
+          </label>
+          <div class="filters" id="filters" role="toolbar" aria-label="Dictionary categories"></div>
+          <div class="dictionary-status" id="dictionary-status" aria-live="polite"></div>
+        </div>
+
+        <div class="entry-list" id="entry-list"></div>
+      </section>
+
+      <section id="principles">
+        <h2 class="section-title"><span data-i18n="principlesTitle">速さだけを最適化しない。</span></h2>
+        <p data-i18n="principlesLead">性能改善は、正しさ・保守性・観測可能性とのトレードオフです。</p>
+        <div class="principle-list">
+          <article><span>01</span><h3 data-i18n="p1t">Evidence first</h3> — <p data-i18n="p1d">プロファイラとベンチマークを、推測より先に置く。</p></article>
+          <article><span>02</span><h3 data-i18n="p2t">Whole-system view</h3> — <p data-i18n="p2d">コードだけでなく JVM、OS、DB、ネットワークまで見る。</p></article>
+          <article><span>03</span><h3 data-i18n="p3t">Readable by default</h3> — <p data-i18n="p3d">測定できる利益がない複雑化は採用しない。</p></article>
+        </div>
+      </section>
+
+      <section class="contribute-box" id="contribute">
+        <h2 data-i18n="contributeTitle">知見を、再利用できる形に。</h2>
+        <p data-i18n="contributeLead">検証結果・反例・JDK バージョン差の追記を歓迎します。</p>
+        <p><a href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer" data-i18n="openRepo">リポジトリを開く</a></p>
+      </section>
+
+      <footer class="site-footer">
+        <p data-i18n="footerText">Java performance documentation. Measure first.</p>
+        <p>© <span id="year"></span> OPTjava · Hosted with GitHub Pages · <a href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">View source</a></p>
+      </footer>
+    </main>
+  </div>
+
+  <dialog class="entry-dialog" id="entry-dialog">
+    <div class="dialog-shell">
+      <button class="dialog-close" id="dialog-close" type="button" aria-label="Close">×</button>
+      <div id="dialog-content"></div>
     </div>
-  </header>
-
-  <main>
-    <section class="hero container">
-      <div class="hero-copy reveal">
-        <div class="eyebrow"><span class="status-dot"></span> OPEN SOURCE · IN DEVELOPMENT</div>
-        <h1>
-          Java の最適化を、<br />
-          <span class="gradient-text">もっとシンプルに。</span>
-        </h1>
-        <p class="hero-lead">
-          OPTjava は、Java のパフォーマンス改善・コード品質・最適化手法を、
-          小さく検証しながら育てていくオープンソースプロジェクトです。
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">
-            View on GitHub <span aria-hidden="true">↗</span>
-          </a>
-          <a class="button button-ghost" href="#about">Explore project <span aria-hidden="true">↓</span></a>
-        </div>
-        <div class="hero-meta" aria-label="Project attributes">
-          <span>Java</span><i></i><span>MIT License</span><i></i><span>GitHub Pages</span>
-        </div>
-      </div>
-
-      <div class="terminal-wrap reveal" aria-label="OPTjava code preview">
-        <div class="terminal">
-          <div class="terminal-bar">
-            <div class="terminal-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-            <span>Optimize.java</span>
-            <span class="terminal-badge">JAVA</span>
-          </div>
-          <pre><code><span class="line muted">01</span> <span class="kw">public final class</span> <span class="type">Optimize</span> {
-<span class="line muted">02</span>   <span class="kw">public static void</span> <span class="fn">main</span>(String[] args) {
-<span class="line muted">03</span>     var values = <span class="type">List</span>.<span class="fn">of</span>(<span class="num">8</span>, <span class="num">3</span>, <span class="num">5</span>, <span class="num">1</span>);
-<span class="line muted">04</span>     var result = values.<span class="fn">stream</span>()
-<span class="line muted">05</span>         .<span class="fn">filter</span>(n -&gt; n &gt; <span class="num">3</span>)
-<span class="line muted">06</span>         .<span class="fn">mapToInt</span>(Integer::intValue)
-<span class="line muted">07</span>         .<span class="fn">sum</span>();
-<span class="line muted">08</span>   }
-<span class="line muted">09</span> }</code></pre>
-          <div class="analysis-row">
-            <span class="analysis-icon" aria-hidden="true">✓</span>
-            <div>
-              <strong>Ready to optimize</strong>
-              <small>Measure → compare → improve</small>
-            </div>
-            <span class="analysis-state">OPT</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section container" id="about">
-      <div class="section-heading reveal">
-        <p class="section-kicker">01 / ABOUT</p>
-        <h2>最適化を、感覚ではなく<br />検証可能なプロセスに。</h2>
-        <p>
-          OPTjava は、Java における最適化のアイデアを実験し、比較し、共有するためのプロジェクトです。
-          速さだけでなく、可読性と保守性も含めて「良い最適化」を考えます。
-        </p>
-      </div>
-
-      <div class="metric-grid reveal">
-        <article class="metric-card">
-          <span class="metric-number">01</span>
-          <h3>Measure</h3>
-          <p>まず計測する。ボトルネックを推測だけで決めない。</p>
-        </article>
-        <article class="metric-card featured">
-          <span class="metric-number">02</span>
-          <h3>Compare</h3>
-          <p>実装を比較する。トレードオフをコードとデータで確認する。</p>
-        </article>
-        <article class="metric-card">
-          <span class="metric-number">03</span>
-          <h3>Improve</h3>
-          <p>小さく改善する。理解できる変更を積み重ねる。</p>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container" id="principles">
-      <div class="section-heading compact reveal">
-        <p class="section-kicker">02 / PRINCIPLES</p>
-        <h2>OPTjava の設計原則</h2>
-      </div>
-
-      <div class="principles-grid">
-        <article class="principle reveal">
-          <span class="principle-icon">01</span>
-          <div>
-            <h3>Evidence first</h3>
-            <p>改善は計測結果から始める。ベンチマークと再現性を重視します。</p>
-          </div>
-        </article>
-        <article class="principle reveal">
-          <span class="principle-icon">02</span>
-          <div>
-            <h3>Readable by default</h3>
-            <p>速さのために複雑さを無制限に増やさない。読めるコードを基準にします。</p>
-          </div>
-        </article>
-        <article class="principle reveal">
-          <span class="principle-icon">03</span>
-          <div>
-            <h3>Small experiments</h3>
-            <p>一つの仮説を小さく試し、結果を比較できる形に保ちます。</p>
-          </div>
-        </article>
-        <article class="principle reveal">
-          <span class="principle-icon">04</span>
-          <div>
-            <h3>Open development</h3>
-            <p>検証・議論・改善の履歴を GitHub 上に残し、誰でも追える形にします。</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container" id="start">
-      <div class="start-panel reveal">
-        <div>
-          <p class="section-kicker">03 / START</p>
-          <h2>Repository から始める。</h2>
-          <p>OPTjava は GitHub で公開しています。clone して、コード・Issue・実験を追加できます。</p>
-        </div>
-
-        <div class="clone-box">
-          <div class="clone-label">Clone repository</div>
-          <div class="clone-command">
-            <code>git clone https://github.com/Summer110622/OPT-java.git</code>
-            <button class="copy-button" type="button" data-copy="git clone https://github.com/Summer110622/OPT-java.git" aria-label="clone command をコピー">Copy</button>
-          </div>
-          <a class="text-link" href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">Open Summer110622/OPT-java <span aria-hidden="true">↗</span></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="container cta-section reveal">
-      <div class="cta-orb" aria-hidden="true"></div>
-      <p class="section-kicker">BUILD · MEASURE · OPTIMIZE</p>
-      <h2>Better Java,<br /><span class="gradient-text">one experiment at a time.</span></h2>
-      <a class="button button-primary" href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">Go to GitHub <span aria-hidden="true">↗</span></a>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <a class="brand brand-small" href="#top"><span class="brand-mark" aria-hidden="true">O</span><span>OPT<span class="brand-accent">java</span></span></a>
-      <p>Open-source Java optimization project.</p>
-      <p>© <span id="year"></span> OPTjava</p>
-    </div>
-  </footer>
+  </dialog>
 
   <script src="script.js"></script>
 </body>
