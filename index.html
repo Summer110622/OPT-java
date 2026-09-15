@@ -4,13 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#f6f6f6" />
-  <meta name="description" content="OPTjava — Java performance optimization encyclopedia in Japanese and English. JVM, GC, memory, concurrency, I/O, profiling and benchmarking." />
+  <meta name="description" content="OPTjava — 5000-article Java performance optimization encyclopedia in Japanese and English." />
   <meta property="og:title" content="OPTjava — Java Performance Encyclopedia" />
   <meta property="og:description" content="A bilingual encyclopedia for Java optimization and performance engineering." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://summer110622.github.io/OPT-java/" />
   <link rel="canonical" href="https://summer110622.github.io/OPT-java/" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=20260915-3" />
   <title>OPTjava — Java Performance Encyclopedia</title>
 </head>
 <body>
@@ -43,16 +43,13 @@
       <nav class="portal">
         <h3>Categories</h3>
         <ul>
-          <li><a href="#dictionary">JVM</a></li>
-          <li><a href="#dictionary">GC</a></li>
-          <li><a href="#dictionary">Memory</a></li>
-          <li><a href="#dictionary">CPU</a></li>
-          <li><a href="#dictionary">Concurrency</a></li>
-          <li><a href="#dictionary">I/O</a></li>
-          <li><a href="#dictionary">Collections</a></li>
-          <li><a href="#dictionary">Database</a></li>
-          <li><a href="#dictionary">Network</a></li>
-          <li><a href="#dictionary">Tooling</a></li>
+          <li><a href="#dictionary">JVM</a></li><li><a href="#dictionary">GC</a></li><li><a href="#dictionary">Memory</a></li>
+          <li><a href="#dictionary">CPU</a></li><li><a href="#dictionary">Concurrency</a></li><li><a href="#dictionary">I/O</a></li>
+          <li><a href="#dictionary">Collections</a></li><li><a href="#dictionary">Database</a></li><li><a href="#dictionary">Network</a></li>
+          <li><a href="#dictionary">Tooling</a></li><li><a href="#dictionary">Framework</a></li><li><a href="#dictionary">Serialization</a></li>
+          <li><a href="#dictionary">Cloud</a></li><li><a href="#dictionary">OS</a></li><li><a href="#dictionary">Messaging</a></li>
+          <li><a href="#dictionary">Cache</a></li><li><a href="#dictionary">Observability</a></li><li><a href="#dictionary">Security</a></li>
+          <li><a href="#dictionary">Startup</a></li><li><a href="#dictionary">Architecture</a></li>
         </ul>
       </nav>
 
@@ -68,19 +65,13 @@
 
     <main class="wiki-main">
       <div class="wiki-tabs" aria-label="Page tools">
-        <div class="wiki-tab-group">
-          <a class="wiki-tab active" href="#top">Article</a>
-          <a class="wiki-tab" href="https://github.com/Summer110622/OPT-java/issues" target="_blank" rel="noreferrer">Discussion</a>
-        </div>
-        <form class="wiki-search" action="#dictionary" onsubmit="document.querySelector('#search-input').focus(); return false;">
-          <input type="search" aria-label="Search OPTjava" placeholder="Search OPTjava" />
-          <button type="submit">Search</button>
-        </form>
+        <div class="wiki-tab-group"><a class="wiki-tab active" href="#top">Article</a><a class="wiki-tab" href="https://github.com/Summer110622/OPT-java/issues" target="_blank" rel="noreferrer">Discussion</a></div>
+        <form class="wiki-search" action="#dictionary" onsubmit="document.querySelector('#search-input').focus(); return false;"><input type="search" aria-label="Search OPTjava" placeholder="Search OPTjava" /><button type="submit">Search</button></form>
       </div>
 
       <h1 class="page-title">OPTjava</h1>
       <p class="page-subtitle">From OPTjava, the Java performance encyclopedia</p>
-      <p class="hatnote">This site documents optimization techniques, measurement methods, trade-offs, and common performance mistakes for Java.</p>
+      <p class="hatnote">This site documents optimization techniques, measurement methods, trade-offs, sample code, and common performance mistakes for Java.</p>
 
       <aside class="infobox">
         <div class="infobox-title">OPTjava</div>
@@ -88,87 +79,54 @@
           <tr><th>Type</th><td>Performance encyclopedia</td></tr>
           <tr><th>Language</th><td>日本語 / English</td></tr>
           <tr><th>Platform</th><td>GitHub Pages</td></tr>
-          <tr><th>Topics</th><td><span id="entry-count">0</span></td></tr>
+          <tr><th>Articles</th><td><span id="entry-count">0</span></td></tr>
           <tr><th>License</th><td>MIT</td></tr>
           <tr><th>Source</th><td><a href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">Summer110622/OPT-java</a></td></tr>
         </table>
       </aside>
 
       <div class="lead clearfix">
-        <p><b>OPTjava</b> — <span data-i18n="heroLead">OPTjava は JVM・GC・メモリ・並行処理・I/O・ベンチマークを横断する、Java 最適化・高速化の百科辞典です。</span></p>
+        <p><b>OPTjava</b> — <span data-i18n="heroLead">OPTjava は 5000 件の実践記事を収録する Java 最適化・高速化百科辞典です。</span></p>
         <p>個々のテクニックを「常に速くなる魔法」として扱うのではなく、<b>Measure → Locate → Change → Verify</b> の順で検証可能な改善として整理します。</p>
       </div>
 
-      <div class="toc" aria-label="Contents">
-        <div class="toc-title">Contents</div>
-        <ol>
-          <li><a href="#method" data-i18n="navMethod">方法論</a></li>
-          <li><a href="#dictionary" data-i18n="navDictionary">百科辞典</a></li>
-          <li><a href="#principles" data-i18n="navPrinciples">原則</a></li>
-          <li><a href="#contribute">Contributing</a></li>
-        </ol>
-      </div>
+      <div class="toc" aria-label="Contents"><div class="toc-title">Contents</div><ol><li><a href="#method" data-i18n="navMethod">方法論</a></li><li><a href="#dictionary" data-i18n="navDictionary">百科辞典</a></li><li><a href="#principles" data-i18n="navPrinciples">原則</a></li><li><a href="#contribute">Contributing</a></li></ol></div>
 
       <section id="method">
         <h2 class="section-title"><a class="edit-link" href="https://github.com/Summer110622/OPT-java/edit/main/index.html" target="_blank" rel="noreferrer">[edit]</a><span data-i18n-html="methodTitle">最適化は、計測から始める。</span></h2>
         <p>Java の性能は JIT、GC、OS scheduler、I/O、依存先の状態など多数の要因で変動します。そのため、最適化は再現可能な計測条件を作るところから始めます。</p>
-        <ol class="method-list">
-          <li><strong data-i18n="m1t">Baseline</strong> — <p data-i18n="m1d">再現可能な入力と計測条件を固定する。</p></li>
-          <li><strong data-i18n="m2t">Profile</strong> — <p data-i18n="m2d">CPU・allocation・lock・I/O の支配項を特定する。</p></li>
-          <li><strong data-i18n="m3t">Change one thing</strong> — <p data-i18n="m3d">仮説を一つに絞り、変更の因果を追えるようにする。</p></li>
-          <li><strong data-i18n="m4t">Re-measure</strong> — <p data-i18n="m4d">性能・可読性・運用コストを含めて前後比較する。</p></li>
-        </ol>
+        <ol class="method-list"><li><strong data-i18n="m1t">Baseline</strong> — <p data-i18n="m1d">再現可能な入力と計測条件を固定する。</p></li><li><strong data-i18n="m2t">Profile</strong> — <p data-i18n="m2d">CPU・allocation・lock・I/O の支配項を特定する。</p></li><li><strong data-i18n="m3t">Change one thing</strong> — <p data-i18n="m3d">仮説を一つに絞り、変更の因果を追えるようにする。</p></li><li><strong data-i18n="m4t">Re-measure</strong> — <p data-i18n="m4d">性能・可読性・運用コストを含めて前後比較する。</p></li></ol>
       </section>
 
       <section id="dictionary">
-        <h2 class="section-title"><a class="edit-link" href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">[source]</a><span data-i18n="dictionaryTitle">Java 最適化百科辞典</span></h2>
-        <p data-i18n="dictionaryLead">症状・技術・計測方法から横断検索できます。</p>
-
+        <h2 class="section-title"><a class="edit-link" href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">[source]</a><span data-i18n="dictionaryTitle">Java 最適化百科辞典 — 5000記事</span></h2>
+        <p data-i18n="dictionaryLead">500 コアテーマ × 10 実践観点。症状・技術・フレームワーク・運用レイヤから横断検索できます。</p>
         <div class="dictionary-tools">
-          <label class="search-box" for="search-input">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.2-4.2m2.2-5.3a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg>
-            <input id="search-input" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="JIT, GC, allocation, JMH..." />
-            <kbd>/</kbd>
-          </label>
+          <label class="search-box" for="search-input"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 21-4.2-4.2m2.2-5.3a7.5 7.5 0 1 1-15 0 7.5 7.5 0 0 1 15 0Z"/></svg><input id="search-input" type="search" autocomplete="off" data-i18n-placeholder="searchPlaceholder" placeholder="JIT, GC, Spring, Kafka, Kubernetes..." /><kbd>/</kbd></label>
           <div class="filters" id="filters" role="toolbar" aria-label="Dictionary categories"></div>
-          <div class="dictionary-status" id="dictionary-status" aria-live="polite"></div>
+          <div class="dictionary-status" id="dictionary-status" aria-live="polite">Loading 5000 articles…</div>
         </div>
-
         <div class="entry-list" id="entry-list"></div>
       </section>
 
       <section id="principles">
         <h2 class="section-title"><span data-i18n="principlesTitle">速さだけを最適化しない。</span></h2>
         <p data-i18n="principlesLead">性能改善は、正しさ・保守性・観測可能性とのトレードオフです。</p>
-        <div class="principle-list">
-          <article><span>01</span><h3 data-i18n="p1t">Evidence first</h3> — <p data-i18n="p1d">プロファイラとベンチマークを、推測より先に置く。</p></article>
-          <article><span>02</span><h3 data-i18n="p2t">Whole-system view</h3> — <p data-i18n="p2d">コードだけでなく JVM、OS、DB、ネットワークまで見る。</p></article>
-          <article><span>03</span><h3 data-i18n="p3t">Readable by default</h3> — <p data-i18n="p3d">測定できる利益がない複雑化は採用しない。</p></article>
-        </div>
+        <div class="principle-list"><article><span>01</span><h3 data-i18n="p1t">Evidence first</h3> — <p data-i18n="p1d">プロファイラとベンチマークを、推測より先に置く。</p></article><article><span>02</span><h3 data-i18n="p2t">Whole-system view</h3> — <p data-i18n="p2d">コードだけでなく JVM、OS、DB、ネットワークまで見る。</p></article><article><span>03</span><h3 data-i18n="p3t">Readable by default</h3> — <p data-i18n="p3d">測定できる利益がない複雑化は採用しない。</p></article></div>
       </section>
 
-      <section class="contribute-box" id="contribute">
-        <h2 data-i18n="contributeTitle">知見を、再利用できる形に。</h2>
-        <p data-i18n="contributeLead">検証結果・反例・JDK バージョン差の追記を歓迎します。</p>
-        <p><a href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer" data-i18n="openRepo">リポジトリを開く</a></p>
-      </section>
+      <section class="contribute-box" id="contribute"><h2 data-i18n="contributeTitle">知見を、再利用できる形に。</h2><p data-i18n="contributeLead">検証結果・反例・JDK バージョン差の追記を歓迎します。</p><p><a href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer" data-i18n="openRepo">リポジトリを開く</a></p></section>
 
-      <footer class="site-footer">
-        <p data-i18n="footerText">Java performance documentation. Measure first.</p>
-        <p>© <span id="year"></span> OPTjava · Hosted with GitHub Pages · <a href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">View source</a></p>
-      </footer>
+      <footer class="site-footer"><p data-i18n="footerText">Java performance documentation. Measure first.</p><p>© <span id="year"></span> OPTjava · Hosted with GitHub Pages · <a href="https://github.com/Summer110622/OPT-java" target="_blank" rel="noreferrer">View source</a></p></footer>
     </main>
   </div>
 
-  <dialog class="entry-dialog" id="entry-dialog">
-    <div class="dialog-shell">
-      <button class="dialog-close" id="dialog-close" type="button" aria-label="Close">×</button>
-      <div id="dialog-content"></div>
-    </div>
-  </dialog>
+  <dialog class="entry-dialog" id="entry-dialog"><div class="dialog-shell"><button class="dialog-close" id="dialog-close" type="button" aria-label="Close">×</button><div id="dialog-content"></div></div></dialog>
 
-  <script src="script.js"></script>
-  <script src="details.js"></script>
-  <script src="examples.js"></script>
+  <script src="script.js?v=20260915-3"></script>
+  <script src="expansion.js?v=20260915-3"></script>
+  <script src="details.js?v=20260915-3"></script>
+  <script src="examples-base.js?v=20260915-3"></script>
+  <script src="boot.js?v=20260915-3"></script>
 </body>
 </html>
